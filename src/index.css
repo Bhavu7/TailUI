@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+@layer components {
+  .gradient-text {
+    @apply bg-gradient-to-br from-purple-600 to-blue-600 bg-clip-text text-transparent;
+  }
+  
+  .glass-effect {
+    @apply backdrop-blur-lg bg-white/10 border border-white/20;
+  }
+  
+  .dark .glass-effect {
+    @apply bg-black/20 border-white/10;
+  }
+  
+  .component-preview {
+    @apply transition-all duration-300 ease-in-out;
+  }
+  
+  .component-preview:hover {
+    @apply -translate-y-2 shadow-2xl;
+  }
+  
+  .dark .component-preview:hover {
+    @apply shadow-2xl;
+  }
+  
+  .code-block {
+    @apply bg-[#1e1e1e] text-[#d4d4d4] rounded-xl overflow-hidden;
+  }
+  
+  .line-numbers {
+    @apply bg-[#2d2d2d] text-[#858585] select-none;
+  }
+  
+  .nav-blur {
+    @apply backdrop-blur-sm bg-white/80;
+  }
+  
+  .dark .nav-blur {
+    @apply bg-black/80;
+  }
+}
