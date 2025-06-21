@@ -1,7 +1,11 @@
 import { useState } from 'react';
 import { useTheme } from '../hooks/useTheme';
 
-export const Navbar = () => {
+type NavbarProps = {
+  onLoginClick: () => void;
+};
+
+export function Navbar({ onLoginClick }: NavbarProps) {
   const { theme, toggleTheme } = useTheme();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -98,6 +102,7 @@ export const Navbar = () => {
           <div className="flex items-center justify-between">
             <button
               id="login-btn"
+              onClick={ onLoginClick }
               className="px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-purple-600 dark:hover:text-purple-400 transition-colors"
             >
               Sign In
